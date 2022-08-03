@@ -574,7 +574,7 @@
           </div>
           <!-- Contact Form -->
           <div class="col-md-6 contact">
-            <div id="success"></div>
+             <div id="success"></div>
             <form role="form" id="submit-form" action="">
               <!-- Name -->
               <div class="row">
@@ -601,7 +601,7 @@
               <!-- Subtmit Button -->
               <button type="submit" class="btn btn-send"   onclick="return validateForm()"  >Send message</button>
             </form>
-          </div>
+          </div> 
         </div>
         <br />
         <!-- Social Buttons - use font-awesome, past in what you want -->
@@ -614,7 +614,7 @@
                 </li>
                 <!-- dribble -->
                 <li>
-                  <a href="index.html#" class="social-btn"><i class="fa fa-twitter"></i></a>
+                  <a href="https://twitter.com/MvHarikrishnan" class="social-btn"><i class="fa fa-twitter"></i></a>
                 </li>
                 <!-- twitter -->
                 <li>
@@ -622,7 +622,7 @@
                 </li>
                 <!-- facebook -->
                 <li>
-                  <a href="index.html#" class="social-btn"><i class="fa fa-whatsapp"></i></a>
+                  <a href="https://wa.me/+919447991094" class="social-btn"><i class="fa fa-whatsapp"></i></a>
                 </li>
                 <!-- deviantart -->
                 <li>
@@ -737,34 +737,34 @@
 
 
     <!-- Form Validation -->
-   <script>
-     $("#submit-form").submit((e)=>{
+ 
+<!-- //      $("#submit-form").submit((e)=>{
 
-      e.preventDefault()
-      $.ajax({
-          url:"https://script.google.com/macros/s/AKfycbzRg9q4LJyiCgW4gcSMRXcuMvsVlDvVH3Xk6fOaUI9WF_XJU0AD-hMVALfoKgmiEthu/exec",
-          data:$("#submit-form").serialize(),
-          method:"post",
-          success:function (response){
-              alert("Form submitted successfully")
-              window.location.reload()
-          },
-          error:function (err){
-              alert("Some Error Detected")
+//       e.preventDefault()
+//       $.ajax({
+//           url:"https://script.google.com/macros/s/AKfycbzRg9q4LJyiCgW4gcSMRXcuMvsVlDvVH3Xk6fOaUI9WF_XJU0AD-hMVALfoKgmiEthu/exec",
+//           data:$("#submit-form").serialize(),
+//           method:"post",
+//           success:function (response){
+//               alert("Form submitted successfully")
+//               window.location.reload()
+//           },
+//           error:function (err){
+//               alert("Some Error Detected")
 
-          }
-})
-})
+//           }
+// })
+// })
 
 // scroll page to id
 // $("#hire-bt").click(function() {
 // $([document.documentElement, document.body]).animate({
 //     scrollTop: $("#contact-area").offset().top
 // }, 3000);
-// });
+// }); -->
 
 
-
+  <script>
 var nameErr = document.getElementById('name-error');
 var emailErr = document.getElementById('email-error');
 var msgErr = document.getElementById('msg-error');
@@ -816,8 +816,28 @@ return true
 function validateForm() {
 if(!validateName() || !validateEmail() || !validateMsg()) {
 return false;
+
+}else {
+  $("#submit-form").submit((e)=>{
+
+e.preventDefault()
+$.ajax({
+    url:"https://script.google.com/macros/s/AKfycbzy23G2N1TFbmaPJ31XO9yorpizw2Q-o0X0QYyr/exec",
+    data:$("#submit-form").serialize(),
+    method:"post",
+    success:function (response){
+        alert("Form submitted successfully")
+        window.location.reload()
+    },
+    error: function (err) {
+    alert("Something Error");
+    },
+})
+})
 }
+
 }
-   </script>
+</script> 
+
 </body>
 </html>
